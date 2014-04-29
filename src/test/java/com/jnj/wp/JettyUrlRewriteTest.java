@@ -13,6 +13,14 @@ import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * Proof of concept to demonstrate use of urlrewrite functionality within camel. The urlrewrite component is an abstraction of 
+ * UrlRewriteFilter which is based in turn upon mod_rewrite for the Apache web server.
+ * 
+ * @see <a href="https://code.google.com/p/urlrewritefilter/">UrlRewriteFilter</a>
+ * @see <a href="http://camel.apache.org/urlrewrite.html">UrlRewrite Component</a>
+ *
+ */
 public class JettyUrlRewriteTest extends CamelTestSupport {
 
 	private static volatile int port;
