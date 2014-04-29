@@ -102,10 +102,10 @@ public class JettyUrlRewriteTest extends CamelTestSupport {
 	
 	@Test
 	public void testHttp4UrlRewrite() throws Exception {
-		String out = template.requestBody("http://localhost:{{port}}/proxy/start/products/100", null, String.class);
+		String out = template.requestBody("http://localhost:{{port}}/proxy/start/products/100d", null, String.class);
 		
 		// if the rewrite is successful the product_id variable will have been placed in the message body.
-		assertEquals(out, "100");
+		assertEquals(out, "100d");
 	}
 	
 }
