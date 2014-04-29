@@ -59,7 +59,7 @@ public class JettyUrlRewriteTest extends CamelTestSupport {
 
 		jndi.bind("prop", prop);
 		//
-		// place url rewrite object in the registry for retrieval by camel
+		// place url rewrite object in the registry for retrieval by camel. this is what we will be testing!
 		//
 		Http4UrlRewrite myRewrite = new Http4UrlRewrite();
 		myRewrite.setConfigFile("rewriteconf.xml");
@@ -101,7 +101,7 @@ public class JettyUrlRewriteTest extends CamelTestSupport {
 	}
 	
 	@Test
-	public void testHttpProxy() throws Exception {
+	public void testHttp4UrlRewrite() throws Exception {
 		String out = template.requestBody("http://localhost:{{port}}/proxy/start/products/100", null, String.class);
 		assertEquals(out, "100");
 	}
