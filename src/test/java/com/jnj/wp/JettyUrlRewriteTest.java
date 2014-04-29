@@ -1,4 +1,4 @@
-package com.jnj.example;
+package com.jnj.wp;
 
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicInteger;
