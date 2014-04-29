@@ -77,6 +77,7 @@ public class JettyUrlRewriteTest extends CamelTestSupport {
 		return port2;
 	}
 
+	@Override
 	protected RouteBuilder createRouteBuilder() throws Exception {
 
 		return new RouteBuilder() {
