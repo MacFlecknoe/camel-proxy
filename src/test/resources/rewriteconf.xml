@@ -5,7 +5,7 @@
 <urlrewrite>
 
 	<!-- this is a rule where we map from /products/nnn to an url that is a 
-		jps page with the product id as a parameter -->
+		jsp page with the product id as a parameter -->
 	<rule>
 		<from>/start/products/([0-9]+)</from>
 		<to>/end/products/index.jsp?product_id=$1</to>
