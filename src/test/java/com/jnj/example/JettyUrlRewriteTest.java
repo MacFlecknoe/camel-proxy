@@ -84,7 +84,7 @@ public class JettyUrlRewriteTest extends CamelTestSupport {
 			public void configure() {
 				
 				// execute url rewrite
-				from("jetty://http://localhost:{{port}}/proxy2?matchOnUriPrefix=true").to("http4://localhost:{{port2}}?bridgeEndpoint=true&throwExceptionOnFailure=false&urlRewrite=#myRewrite");
+				from("jetty://http://localhost:{{port}}/proxy?matchOnUriPrefix=true").to("http4://localhost:{{port2}}?bridgeEndpoint=true&throwExceptionOnFailure=false&urlRewrite=#myRewrite");
 				
 				// if url rewrite is successful this route will be executed and the product_id variable placed in the message for easy retrieval
 				from("jetty:http://localhost:{{port2}}/end/products/index.jsp").transform(header("product_id"));
@@ -94,7 +94,7 @@ public class JettyUrlRewriteTest extends CamelTestSupport {
 	
 	@Test
 	public void testHttpProxy() throws Exception {
-		String out = template.requestBody("http://localhost:{{port}}/proxy2/start/products/100", null, String.class);
+		String out = template.requestBody("http://localhost:{{port}}/proxy/start/products/100", null, String.class);
 		assertEquals(out, "100");
 	}
 	
