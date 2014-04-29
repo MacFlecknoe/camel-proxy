@@ -83,7 +83,7 @@ public class JettyUrlRewriteTest extends CamelTestSupport {
 		return new RouteBuilder() {
 			public void configure() {
 				
-				// execute url rewrite
+				// execute url rewrite (this is our proxy route)
 				from("jetty://http://localhost:{{port}}/proxy?matchOnUriPrefix=true").to("http4://localhost:{{port2}}?bridgeEndpoint=true&throwExceptionOnFailure=false&urlRewrite=#myRewrite");
 				
 				// if url rewrite is successful this route will be executed and the product_id variable placed in the message for easy retrieval
